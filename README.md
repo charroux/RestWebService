@@ -48,10 +48,15 @@ ESC pour quitter le mode INSERT
 
 :q 	quitte vi
 
-shutdown
+yum install git
 
+mkdir RentCarService
+cd RentCarService
 
 démarrer apache tomcat : startup dans le bin d'apache tomcat
 stopper apache tomcat shutdown
 
 déployer avec Gradle : gradle cargoDeployRemote
+
+
+shutdown
