@@ -16,6 +16,7 @@ wget https://services.gradle.org/distributions/gradle-2.8-bin.zip
 unzip gradle-2.8-bin.zip
 cd ..
 
+
 vi .bashrc
 
 ajouter à la fin la commande :
