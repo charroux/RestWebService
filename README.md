@@ -62,8 +62,8 @@ cd RestWebService
 git init
 git pull http://github.com/charroux/RestWebService
 
-démarrer apache tomcat : startup dans le bin d'apache tomcat
-stopper apache tomcat shutdown
+démarrer apache tomcat : nohup ./startup.sh dans le bin d'apache tomcat
+stopper apache tomcat ./shutdown.sh
 
 déployer avec Gradle : gradle cargoDeployRemote
 
