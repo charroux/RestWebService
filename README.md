@@ -15,7 +15,7 @@ yum install unzip
 
 unzip hsqldb_1_8_1_3.zip
 
-nohup java -cp database/hsqldb/lib/hsqldb.jar org.hsqldb.Server
+nohup java -cp /root/database/hsqldb/lib/hsqldb.jar org.hsqldb.Server
 
 cd ..
 
@@ -48,10 +48,19 @@ ESC pour quitter le mode INSERT
 
 :q 	quitte vi
 
+mkdir tomcat
+cd tomcat
+wget http://mirror.nl.webzilla.com/apache/tomcat/tomcat-7/v7.0.65/bin/apache-tomcat-7.0.65.tar.gz
+tar xzf apache-tomcat-7.0.65.tar.gz
+
 yum install git
 
 mkdir RentCarService
 cd RentCarService
+mkdir RestWebService
+cd RestWebService
+git init
+git pull http://github.com/charroux/RestWebService
 
 démarrer apache tomcat : startup dans le bin d'apache tomcat
 stopper apache tomcat shutdown
