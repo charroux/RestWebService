@@ -2,7 +2,9 @@
 
 
 sudo yum install java-1.7.0-openjdk-devel
+
 yum install wget
+
 mkdir database
 cd database
 wget http://sourceforge.net/projects/hsqldb/files/hsqldb/hsqldb_1_8_1/hsqldb_1_8_1_3.zip
