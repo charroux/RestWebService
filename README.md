@@ -39,9 +39,13 @@ export PATH=$PATH:/root/gradle/gradle-2.8/bin
 en utilisant les commandes vi
 
 o 	ouvre une nouvelle ligne en dessous de la ligne courante
+
 i 	insère du texte avant le curseur
+
 ESC pour quitter le mode INSERT
+
 :w 	enregistre le fichier courant
+
 :q 	quitte vi
 
 shutdown
