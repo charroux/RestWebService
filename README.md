@@ -67,6 +67,32 @@ ESC pour quitter le mode INSERT
 
 :q 	quitte vi
 
+create a /etc/yum.repos.d/mongodb-org-2.6.repo file
+
+[mongodb-org-2.6]
+
+  name=MongoDB 2.6 Repository
+
+  baseurl=http://downloads-distro.mongodb.org/repo/redhat/os/x86_64/
+
+  gpgcheck=0
+
+  enabled=1
+
+yum install -y mongodb-org
+
+Set SELinux to permissive mode in /etc/selinux/config by changing the SELINUX setting to permissive .
+
+  SELINUX=permissive
+  
+service mongod start
+
+You can verify that the mongod process has started successfully by checking the contents of the log file at /var/log/mongodb/mongod.log for a line reading
+
+[initandlisten] waiting for connections on port <port>
+
+service mongod stop
+
 mkdir tomcat
 
 cd tomcat
