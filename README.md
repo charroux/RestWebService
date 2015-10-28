@@ -18,6 +18,8 @@ yes | command
 
 par exemple yes | yum install unzip
 
+pas utile pour wget ...
+
 sudo yum install java-1.7.0-openjdk-devel
 
 yum install wget
