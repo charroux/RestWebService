@@ -76,6 +76,16 @@ Utilisation des commandes vi :
   
   :q 	quitte vi
 
+Installation ActiveMQ :
+
+  wget wwwftp.ciril.fr/pub/apache/activemq/5.12.1/apache-activemq-5.12.1-bin.tar.gz
+  
+  tar zxvf apache-activemq-5.12.1-bin.tar.gz
+  
+  nohup ./activemq start dans le dossier bin d'activeMQ
+  
+  ./activemq stop pour arrêter activeMQ
+  
 Installation MongoDB :
 
   create a /etc/yum.repos.d/mongodb-org-2.6.repo file
