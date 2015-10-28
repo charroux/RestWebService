@@ -1,5 +1,17 @@
 # RestWebService
 
+proxy configuration :
+export http_proxy=http://proxy.efrei.fr:3128
+export https_proxy=$http_proxy
+export ftp_proxy=$http_proxy
+export rsync_proxy=$http_proxy
+export no_proxy="localhost,127.0.0.1"
+
+Eviter d'avoir à saisir yes (y) lors d'une installation :
+
+yes | command
+
+par exemple yes | yum install unzip
 
 sudo yum install java-1.7.0-openjdk-devel
 
