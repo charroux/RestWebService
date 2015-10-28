@@ -73,10 +73,15 @@ tar xzf apache-tomcat-7.0.65.tar.gz
 yum install git
 
 mkdir RentCarService
+
 cd RentCarService
+
 mkdir RestWebService
+
 cd RestWebService
+
 git init
+
 git pull http://github.com/charroux/RestWebService
 
 démarrer apache tomcat : nohup ./startup.sh dans le bin d'apache tomcat
