@@ -40,7 +40,7 @@ Installation et lancement database :
   
   unzip hsqldb_1_8_1_3.zip
   
-  nohup java -cp /root/database/hsqldb/lib/hsqldb.jar org.hsqldb.Server
+  nohup java -cp /root/database/hsqldb/lib/hsqldb.jar org.hsqldb.Server &
   
   cd ..
 
@@ -82,7 +82,7 @@ Installation ActiveMQ :
   
   tar zxvf apache-activemq-5.12.1-bin.tar.gz
   
-  nohup ./activemq start dans le dossier bin d'activeMQ
+  nohup ./activemq start & dans le dossier bin d'activeMQ
   
   ./activemq stop pour arrêter activeMQ
   
