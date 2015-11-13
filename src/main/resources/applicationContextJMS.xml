@@ -7,15 +7,28 @@ http://www.springframework.org/schema/beans/spring-beans.xsd
 http://www.springframework.org/schema/aop 
 http://www.springframework.org/schema/aop/spring-aop.xsd">
 	
+	<bean id="placeholderConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
+		<property name="location" value="classpath:restWebService.properties"/>
+	</bean>
 	
 	<bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
- 		<!-- <property name="brokerURL" value="tcp://localhost:61616"/> -->
- 		<property name="brokerURL" value="tcp://localhost:61616?jms.useAsyncSend=true"/>
+ 		<property name="brokerURL" value="${activeMQ.address}"/>
  	</bean>
 	
 	<bean id="queue" class="org.apache.activemq.command.ActiveMQQueue">
 		<constructor-arg value="myQueue"/>
 	</bean>	
+	
+	<bean id="topic" class="org.apache.activemq.command.ActiveMQTopic">
+		<constructor-arg value="myTopic"/>
+	</bean>	
+	
+<!-- 	<mongo:mongo host="127.0.0.1" port="27017" />
+	<mongo:db-factory dbname="yourdb" />
+
+	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
+	</bean> -->
 	
 </beans>
 

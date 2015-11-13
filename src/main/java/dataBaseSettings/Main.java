@@ -24,7 +24,19 @@ public class Main {
 		
 		car = new Car();
 		car.setPlateNumber("22BB33");
-		car.setRented(false);	
+		car.setRented(false);
+		
+		entityManager.persist(car);
+		
+		car = new Car();
+		car.setPlateNumber("33CC44");
+		car.setRented(false);
+		
+		entityManager.persist(car);
+		
+		car = new Car();
+		car.setPlateNumber("44DD55");
+		car.setRented(false);
 		
 		entityManager.persist(car);
 
