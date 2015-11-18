@@ -3,6 +3,7 @@ package rentingService;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -84,8 +85,18 @@ public class RentalTest {
 			assertNotNull(cars);
 			assertTrue(cars.contains(car1));
 			
+			CarDTO newCar = rental.newCar();
+			assertNotNull(newCar);
+			
+			rental.removeACar(newCar.getPlateNumber());
+			
+			try{	
+				CarDTO removedCar = rental.carSpecifications(newCar.getPlateNumber());
+				fail("Car should be deleted");
+			}catch(Exception e){
+			}
+			
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
 			fail(e.getMessage());
 		}
 	}

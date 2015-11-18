@@ -5,7 +5,20 @@ import java.util.List;
 import dto.CarDTO;
 
 public interface Rental {
-
+	
+	/**
+	 * Create e new car
+	 * @return the new car
+	 */
+	CarDTO newCar();
+	
+	/**
+	 * Remove a car
+	 * @param plateNumber
+	 * @throws Exception no car with such a plate number
+	 */
+	void removeACar(String plateNumber) throws Exception;
+	
 	/**
 	*
 	* @return all cars not rented

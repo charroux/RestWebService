@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
@@ -26,6 +27,12 @@ public class RentalImpl implements Rental{
 		super();
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory(dataBaseManager);
 		entityManager = emf.createEntityManager();
+		Query query = entityManager.createQuery("select cars from Car cars");
+		List<Car> cars = query.getResultList();
+		if(cars.size() == 0){
+			this.newCar();
+			this.newCar();
+		}
 		this.rentMessageTopicPublisher = rentMessageTopicPublisher;
 	}
 
@@ -87,6 +94,30 @@ public class RentalImpl implements Rental{
 		} else {
 			throw new Exception("No car with such a plate number");
 		}
+	}
+
+	@Override
+	public CarDTO newCar() {
+		int plateNumber = (int) (Math.random()*1000);
+		Car car = new Car();
+		car.setPlateNumber(new Integer(plateNumber).toString());
+		car.setRented(false);
+		EntityTransaction tx = entityManager.getTransaction();
+		tx.begin();
+		entityManager.persist(car);
+		tx.commit();
+		return new CarDTO(car);
+	}
+
+	@Override
+	public void removeACar(String plateNumber) throws Exception {
+		Query query = entityManager.createQuery("select car from Car car where car.plateNumber like :plate").setParameter("plate", plateNumber);
+		Car car = (Car) query.getSingleResult();
+		EntityTransaction tx = entityManager.getTransaction();
+		tx.begin();
+		entityManager.remove(car);
+		tx.commit();
+		
 	}
 
 }
